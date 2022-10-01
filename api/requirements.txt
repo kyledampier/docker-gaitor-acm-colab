@@ -1,0 +1,10 @@
+fastapi
+tensorflow
+keras
+numpy
+pandas
+scikit-learn
+matplotlib
+seaborn
+uvicorn[standard]
+pillow
