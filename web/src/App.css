@@ -2,7 +2,7 @@
   border: 1px solid #0004;
   padding: 1em;
   background-color: #eee;
-  min-height: 400px;
+  min-height: 200px;
   min-width: 400px;
   margin: 1em;
 
@@ -27,4 +27,24 @@ h2 {
   width: 256px;
   height: 256px;
   object-fit: contain;
+}
+
+table {
+  margin: 1em;
+  table-layout: auto;
+  width: 100%;
+}
+
+.class-name {
+  text-align: right;
+  padding-right: 0.5em;
+}
+
+.probability-label {
+  min-width: 100px;
+}
+
+.probability {
+  text-align: left;
+  padding-left: 0.5em;
 }

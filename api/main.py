@@ -54,6 +54,7 @@ async def predict(image: UploadFile):
     # Add a batch dimension
     img = np.expand_dims(img, axis=0)
     prediction = model.predict(img)
+    prediction = np.array(prediction[0]).astype(np.float64)
 
-    output = dict(zip(classes, prediction[0]))
-    return str(output)
+    output = dict(zip(classes, prediction))
+    return json.dumps(output)

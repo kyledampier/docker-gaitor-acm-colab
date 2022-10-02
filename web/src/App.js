@@ -1,6 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import { Input, Grid } from "@mui/material";
+import { Input, Grid, LinearProgress } from "@mui/material";
 let axios = require("axios");
 
 var predict_endpoint = "http://localhost:8000/predict";
@@ -10,11 +10,29 @@ var headers = {
 };
 
 const renderOuput = (obj) => {
+  console.log(obj);
   if (obj)
     return (
-      <div>
-        <p>{obj}</p>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th className="class-name">Class Name</th>
+            <th className="probability-label">Probability</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.keys(obj).map((key) => (
+            <tr>
+              <td className="class-name">{key}</td>
+              <td>
+                <LinearProgress value={obj[key] * 100} variant="determinate" />
+              </td>
+              <td className="probability">{(obj[key] * 100).toFixed(2)}%</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     );
   else return <div></div>;
 };
@@ -32,7 +50,8 @@ function App() {
     var request = axios.post(predict_endpoint, formData, { headers: headers });
     request
       .then((response) => {
-        setOutput(response.data);
+        console.log(response.data);
+        setOutput(JSON.parse(response.data));
       })
       .catch((error) => {
         console.log(error);
@@ -67,7 +86,9 @@ function App() {
               alt="Upload Preview"
               className="img-preview"
             />
-          ) : null}
+          ) : (
+            <p> No image selected.</p>
+          )}
         </Grid>
       </Grid>
       <Grid item sm={12} md={6}>
