@@ -1,7 +1,8 @@
 import io
 import json
 import numpy as np
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 import tensorflow as tf
 from PIL import Image
 from pydantic import BaseModel
@@ -14,6 +15,14 @@ class PredictRequest(BaseModel):
     image: UploadFile
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def read_root():

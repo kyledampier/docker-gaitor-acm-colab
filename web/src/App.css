@@ -1,17 +1,30 @@
-.App {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.file-input {
+  border: 1px solid #0004;
+  padding: 1em;
+  background-color: #eee;
+  min-height: 400px;
+  min-width: 400px;
+  margin: 1em;
+
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
 }
 
-.flexbox-item {
-  flex: 1;
+h1 {
+  text-align: center;
+  font-size: 2.5em;
 }
 
-.flexbox-item-1 {
-  flex: 1;
+h2 {
+  text-align: center;
+  font-size: 2em;
 }
 
-.flexbox-item-2 {
-  flex: 1;
+.img-preview {
+  width: 256px;
+  height: 256px;
+  object-fit: contain;
 }

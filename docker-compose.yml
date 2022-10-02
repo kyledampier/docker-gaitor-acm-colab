@@ -5,7 +5,7 @@ services:
       - "80:80"
       - "3000:3000"
     volumes:
-      - ./web:/app
+      - ./web/src:/app/src
   api:
     build: ./api
     ports:
