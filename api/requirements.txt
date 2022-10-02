@@ -6,5 +6,6 @@ pandas
 scikit-learn
 matplotlib
 seaborn
-uvicorn[standard]
+pydantic
+uvicorn
 pillow

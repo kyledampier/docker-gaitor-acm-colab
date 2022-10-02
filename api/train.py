@@ -13,8 +13,7 @@ test_labels = tf.keras.utils.to_categorical(test_labels, 10)
 train_images, test_images = train_images / 255.0, test_images / 255.0
 
 # Verify the data
-classes = ['airplane', 'automobile', 'bird', 'cat', 'deer',
-               'dog', 'frog', 'horse', 'ship', 'truck']
+classes = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
 
 # Create the convolutional base
 model = models.Sequential()
