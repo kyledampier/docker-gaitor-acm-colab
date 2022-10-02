@@ -9,3 +9,4 @@ seaborn
 pydantic
 uvicorn
 pillow
+python-multipart
