@@ -1,0 +1,17 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexbox-item {
+  flex: 1;
+}
+
+.flexbox-item-1 {
+  flex: 1;
+}
+
+.flexbox-item-2 {
+  flex: 1;
+}
