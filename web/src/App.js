@@ -3,7 +3,9 @@ import { useState } from "react";
 import { Input, Grid, LinearProgress } from "@mui/material";
 let axios = require("axios");
 
-var predict_endpoint = "http://localhost:8000/predict";
+// var predict_endpoint = "http://localhost:8000/predict";
+var predict_endpoint =
+  "https://docker-gaitor-acm-colab-api-vyx76o7miq-uc.a.run.app/predict";
 var headers = {
   Accept: "application/json",
   "Content-Type": "multipart/form-data",
