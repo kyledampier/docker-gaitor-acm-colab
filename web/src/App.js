@@ -3,9 +3,11 @@ import { useState } from "react";
 import { Input, Grid, LinearProgress } from "@mui/material";
 let axios = require("axios");
 
-// var predict_endpoint = "http://localhost:8000/predict";
-var predict_endpoint =
-  "https://docker-gaitor-acm-colab-api-vyx76o7miq-uc.a.run.app/predict";
+var predict_endpoint = "http://localhost:8000/predict";
+// ---- Uncomment the following lines to run the app using trainer model on GCloud API ----
+// var predict_endpoint =
+//   "https://docker-gaitor-acm-colab-api-vyx76o7miq-uc.a.run.app/predict";
+
 var headers = {
   Accept: "application/json",
   "Content-Type": "multipart/form-data",
